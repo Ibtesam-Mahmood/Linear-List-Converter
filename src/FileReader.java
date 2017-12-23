@@ -1,4 +1,8 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.commons.io.IOUtils;
 
 public class FileReader {
 
@@ -16,6 +20,21 @@ public class FileReader {
 		if(!checkEmptyDirectory())
 			return;
 		
+		File[] files = (new File(readDir)).listFiles();
+		
+		for (int i = 0; i < files.length; i++) {
+			
+			String text = "";
+			
+			try(FileInputStream inputStream = new FileInputStream(files[i])) {     
+			    text = IOUtils.toString(inputStream, "US-ASCII");
+			} catch (IOException e) { e.printStackTrace(); }
+			
+			System.out.println(text);
+
+		}
+		
+
 		
 		
 	}
