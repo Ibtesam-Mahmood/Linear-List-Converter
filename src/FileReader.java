@@ -44,9 +44,12 @@ public class FileReader {
 			    text = IOUtils.toString(inputStream, "US-ASCII"); //Parses the text into a string
 			} catch (IOException e) { e.printStackTrace(); } 
 			
+			if(!containsSpacing(text, spacing, files[i]))
+				continue; //Continues to the next file if the spacing is not present
+			
 			String[] list = text.split(spacing); //Splits the text based off the common spacing
 			
-			printToFile(list, files[i]); //Refactors the files into a linear list in the converted folder
+			printToFile(list, files[i]); //Changes the files into a linear list in the converted folder
 
 		}	
 		
@@ -91,6 +94,19 @@ public class FileReader {
 		else
 			return true;
 		
+	}
+	
+	//Checks if the file contains the spacing
+	//@param text - the text of the file
+	//@param spacing - the specific spacing
+	//@param file - the file which is being checked
+	private boolean containsSpacing(String text, String spacing, File file) {
+		if(text.contains(spacing))
+			return true;
+		else {
+			System.out.println(file.getName() + " does not contain the specific spacing and will not be converted");
+			return false;
+		}
 	}
 	
 }
