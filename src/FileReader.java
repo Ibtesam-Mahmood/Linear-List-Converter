@@ -73,12 +73,12 @@ public class FileReader {
 			for (int i = 0; i < list.length; i++) {
 				writer.write(list[i]);
 				if(i != list.length - 1)
-					writer.write("\n");
+					writer.write(" \n");
 			}
 			
 		} catch (IOException e) { e.printStackTrace(); }
 		
-		deleteFile(file);
+		//deleteFile(file);
 		
 	}
 	
