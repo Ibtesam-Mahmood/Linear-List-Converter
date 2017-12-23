@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
 
@@ -5,7 +6,13 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		FileReader reader = new FileReader(", ");
+		Scanner c = new Scanner(System.in);
+		
+		System.out.print("Common Spacing: ");
+		
+		String space = c.nextLine();
+		
+		FileReader reader = new FileReader(space);
 		reader.read();
 		
 	}

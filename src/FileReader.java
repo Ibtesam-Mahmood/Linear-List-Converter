@@ -34,13 +34,13 @@ public class FileReader {
 			    text = IOUtils.toString(inputStream, "US-ASCII");
 			} catch (IOException e) { e.printStackTrace(); }
 			
-			System.out.println(text);
-			
 			String[] list = text.split(spacing);
 			
 			printToFile(list, files[i]);
 
 		}	
+		
+		System.out.println("Files Converted");
 	}
 	
 	private void deleteFile(File file) {
