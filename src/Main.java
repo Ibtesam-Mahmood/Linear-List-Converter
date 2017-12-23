@@ -10,10 +10,10 @@ public class Main {
 		
 		System.out.print("Common Spacing: ");
 		
-		String space = c.nextLine();
+		String space = c.nextLine(); //Asks the user for common spacing between the words
 		
 		FileReader reader = new FileReader(space);
-		reader.read();
+		reader.parse();
 		
 	}
 	
