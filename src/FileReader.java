@@ -1,6 +1,10 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 import org.apache.commons.io.IOUtils;
 
@@ -31,11 +35,31 @@ public class FileReader {
 			} catch (IOException e) { e.printStackTrace(); }
 			
 			System.out.println(text);
+			
+			String[] list = text.split(spacing);
+			
+			printToFile(list, files[i]);
 
-		}
+		}	
+	}
+	
+	private void deleteFile(File file) {
+		file.delete();
+	}
+	
+	private void printToFile(String[] list, File file) {
 		
-
+		try (Writer writer = new BufferedWriter(new OutputStreamWriter( new FileOutputStream(postDir + "\\" + file.getName()) )) ) {
+			
+			for (int i = 0; i < list.length; i++) {
+				writer.write(list[i]);
+				if(i != list.length - 1)
+					writer.write("\n");
+			}
+			
+		} catch (IOException e) { e.printStackTrace(); }
 		
+		deleteFile(file);
 		
 	}
 	
