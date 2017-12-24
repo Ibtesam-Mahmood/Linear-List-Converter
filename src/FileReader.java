@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.file.Paths;
 
 import org.apache.commons.io.IOUtils;
 
@@ -16,10 +17,10 @@ public class FileReader {
 	 */
 	
 	//Directory the files are looked for in
-	private final String readDir = "C:\\Users\\ibtes\\Documents\\WorkSpaces\\Mini Functions\\Linear List Converter\\text files\\Base";
+	private final String readDir = Paths.get("\\text files\\Base").toAbsolutePath().toString();
 	
 	//Directory the files will be transfered to
-	private final String postDir = "C:\\Users\\ibtes\\Documents\\WorkSpaces\\Mini Functions\\Linear List Converter\\text files\\Converted";
+	private final String postDir = Paths.get("\\text files\\C").toAbsolutePath().toString();
 	
 	private String spacing; //The common spacing between the words
 	
