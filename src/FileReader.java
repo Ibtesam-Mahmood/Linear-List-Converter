@@ -17,10 +17,10 @@ public class FileReader {
 	 */
 	
 	//Directory the files are looked for in
-	private final String readDir = Paths.get("\\text files\\Base").toAbsolutePath().toString();
+	private final String readDir = Paths.get("text files\\Base").toAbsolutePath().toString();
 	
 	//Directory the files will be transfered to
-	private final String postDir = Paths.get("\\text files\\C").toAbsolutePath().toString();
+	private final String postDir = Paths.get("text files\\C").toAbsolutePath().toString();
 	
 	private String spacing; //The common spacing between the words
 	
